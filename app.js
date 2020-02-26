@@ -6,9 +6,9 @@ const chalk = require('chalk');
 const url =
   'https://www.premierleague.com/stats/top/players/goals?se=-1&cl=-1&iso=-1&po=-1?se=-1';
 
-function exportResult() {
+function exportResult(file = 'players.json') {
   const nationality = {};
-  const raw = fs.readFileSync('players.json', 'utf-8');
+  const raw = fs.readFileSync(file, 'utf-8');
   const players = JSON.parse(raw);
 
   players.map(r => {
@@ -90,3 +90,5 @@ async function init() {
 }
 
 init();
+
+module.exports = exportResult;
