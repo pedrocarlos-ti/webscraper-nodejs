@@ -90,5 +90,3 @@ async function init() {
 }
 
 init();
-
-module.exports = exportResult;
